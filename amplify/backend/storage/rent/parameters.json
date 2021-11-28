@@ -1,0 +1,5 @@
+{
+    "tableName": "rent",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

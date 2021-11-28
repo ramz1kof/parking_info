@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rent-dev-151507-authRole",
+      "UnauthRoleArn": "arn:aws:iam::563131228218:role/amplify-rent-dev-151507-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::563131228218:role/amplify-rent-dev-151507-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-rent-dev-151507-deployment",
+      "UnauthRoleName": "amplify-rent-dev-151507-unauthRole",
+      "StackName": "amplify-rent-dev-151507",
+      "StackId": "arn:aws:cloudformation:us-east-1:563131228218:stack/amplify-rent-dev-151507/36f17360-504d-11ec-bc53-0eb55df318d5",
+      "AmplifyAppId": "d304zqpwslqu6q"
+    },
+    "categories": {
+      "function": {
+        "rentapi": {
+          "deploymentBucketName": "amplify-rent-dev-151507-deployment",
+          "s3Key": "amplify-builds/rentapi-466e7a6e7268645a3850-build.zip"
+        }
+      }
+    }
+  }
+}

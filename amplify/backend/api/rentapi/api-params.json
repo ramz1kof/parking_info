@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/rent",
+      "lambdaFunction": "rentapi",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/rent"
+    }
+  ],
+  "resourceName": "rentapi",
+  "apiName": "rentapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "rentapi"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-rent-dev-151507-authRole",
+    "unAuthRoleName": "amplify-rent-dev-151507-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "rentapi",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
