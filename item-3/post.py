@@ -4,7 +4,7 @@ import time
 from random import randint
 
 
-url = 'https://c9qfzg1w47.execute-api.us-east-1.amazonaws.com/dev/rent'
+url = 'http://www.m1rrox.fun/api/'
 
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 

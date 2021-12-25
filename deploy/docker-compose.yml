@@ -1,0 +1,27 @@
+version: '3'
+services:
+  backend:
+    hostname: backend
+    image: m1rrox/backend
+    environment:
+      - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      - AWS_REGION=us-east-1
+      - STORAGE_RENT_NAME=rent-dev
+    build:
+      dockerfile: ./backend/Dockerfile
+    deploy:
+      x-aws-autoscaling: 
+        cpu: 20
+        max: 3
+    ports:
+      - 5000:5000
+  frontend:
+    hostname: frontend
+    depends_on: 
+      - backend
+    image: m1rrox/frontend
+    build:
+      dockerfile: ./frontend/Dockerfile
+    ports:
+      - 80:80

@@ -1,0 +1,21 @@
+version: '3'
+services:
+  service1:
+    hostname: service1
+    image: m1rrox/service
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+  service2:
+    hostname: service2
+    image: m1rrox/service
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+  service3:
+    hostname: service3
+    image: m1rrox/service
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+

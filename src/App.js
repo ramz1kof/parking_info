@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { API } from 'aws-amplify'
 import TextField from '@material-ui/core/TextField';
 import "./Rent.css"
-
+import axios from "axios";
 function App() {
   const [textObj, setTextObj] = useState([]);
-
-
-
   const [address, setAddress] = useState("sdf") 
   const [numberOfAvailableCars, setNumberOfAvailableCars] = useState("sdf")
   const [sensorId, setSensorId] = useState("dsf")
@@ -18,9 +14,11 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const data = await API.get('rentapi', '/rent');
-      console.log(data)
-      setTextObj(data);
+      
+      axios.get('http://m1rrox.fun:80/rent/').then(res => {
+        const data = res.data;
+        setTextObj(data);
+    })
     } catch (error) {
       console.log(error);
     }
@@ -138,26 +136,23 @@ function App() {
 
 }
 async function AddRent(address,numberOfAvailableCars,sensorId,sensorType,timestamp, informationOnFines, secretKey) {
+  
+  const body = {
+    timestamp: timestamp,
+    sensorId: sensorId,
+    sensorType: sensorType,
+    address: address,
+    numberOfAvailableCars:numberOfAvailableCars,
+    informationOnFines:informationOnFines,
+    SECRET_KEY:secretKey
+  };
+axios.post(`http://www.m1rrox.fun/api/`, {body})
 
-  const data = await API.post('rentapi', '/rent', {
-    body: {
-      timestamp: timestamp,
-      sensorId: sensorId,
-      sensorType: sensorType,
-      address: address,
-      numberOfAvailableCars:numberOfAvailableCars,
-      informationOnFines:informationOnFines,
-      SECRET_KEY:secretKey
-    }
-  })
- 
-  console.log(data)
 
 }
 
 async function deleteObj(id) {
-  const del = await API.del('rentapi', `/rent/${id}`)
-  console.log(del);
+  axios.delete(`http://m1rrox.fun:80/rent/${id}`)
 }
 
 
