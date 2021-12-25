@@ -15,7 +15,7 @@ function App() {
   const fetchData = async () => {
     try {
       
-      axios.get('http://m1rrox.fun:80/rent/').then(res => {
+      axios.get('http://www.m1rrox.fun:5000/rent').then(res => {
         const data = res.data;
         setTextObj(data);
     })
@@ -152,7 +152,7 @@ axios.post(`http://www.m1rrox.fun/api/`, {body})
 }
 
 async function deleteObj(id) {
-  axios.delete(`http://m1rrox.fun:80/rent/${id}`)
+  axios.delete(`http://www.m1rrox.fun:5000/rent/${id}`)
 }
 
 
